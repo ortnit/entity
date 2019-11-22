@@ -1,0 +1,16 @@
+{
+    "name": "ortnit/entity",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tobias Spigner",
+            "email": "tobias@spigner.de"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ortnit\\": "src/"
+        }
+    }
+}
