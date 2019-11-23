@@ -2,7 +2,6 @@
     "name": "ortnit/entity",
     "description": "a little lib to for entities which are used in many places",
     "license": "MIT",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Tobias Spigner",
