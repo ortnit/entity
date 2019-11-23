@@ -15,7 +15,10 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
-  
+
+    - name: lint the code
+      run: vendor/bin/parallel-lint --exclude vendor/ .
+
     - name: check the code formating
       run: vendor/bin/phpcs
       
