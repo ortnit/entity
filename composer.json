@@ -7,10 +7,18 @@
             "email": "tobias@spigner.de"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.3"
+    },
     "autoload": {
         "psr-4": {
-            "Ortnit\\": "src/"
+            "Ortnit\\": "src/",
+            "Test\\": "test/"
         }
+    },
+    "require-dev": {
+        "symfony/debug-bundle": "^5.0",
+        "phpunit/phpunit": "^8",
+        "squizlabs/php_codesniffer": "*"
     }
 }
