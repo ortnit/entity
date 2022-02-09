@@ -40,8 +40,8 @@ class EntityField
     /**
      * EntityField constructor.
      *
-     * @param string                  $name
-     * @param mixed|null              $default
+     * @param string $name
+     * @param mixed|null $default
      * @param ValidatorInterface|null $rule
      */
     public function __construct(string $name, $default = null, ValidatorInterface $rule = null)

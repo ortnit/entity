@@ -26,19 +26,19 @@ class EntityTest extends TestCase
         $this->entityFields = [
             'state' => [
                 'default' => 0,
-                'rule'    => new IntType(),
+                'rule' => new IntType(),
             ],
-            'id'    => [
+            'id' => [
                 'default' => 0,
-                'rule'    => new IntType(),
+                'rule' => new IntType(),
             ],
-            'name'  => [
+            'name' => [
                 'default' => null,
-                'rule'    => new StringType(),
+                'rule' => new StringType(),
             ],
-            'list'  => [
+            'list' => [
                 'default' => [],
-                'rule'    => new ArrayType(),
+                'rule' => new ArrayType(),
             ],
         ];
     }
@@ -171,7 +171,7 @@ class EntityTest extends TestCase
     {
         $entity = $this->getEntity();
         $fields = [
-            'id'    => 1,
+            'id' => 1,
             'state' => 2,
         ];
 
@@ -187,8 +187,8 @@ class EntityTest extends TestCase
     {
         $entity = $this->getEntity();
         $fields = [
-            'id'     => 1,
-            'state'  => 2,
+            'id' => 1,
+            'state' => 2,
             'rocket' => 3,
         ];
         $this->expectException(EntityNotFoundException::class);
@@ -284,7 +284,7 @@ class EntityTest extends TestCase
     {
         $entity = $this->getEntity();
         $fields = [
-            'id'    => 1,
+            'id' => 1,
             'state' => 2,
         ];
 

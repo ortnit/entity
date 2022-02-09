@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64d38bff0cd8f1619583e8603655acd3",
+    "content-hash": "6b6d1518f13a931055ba63e124162a92",
     "packages": [
         {
             "name": "ortnit/json",
@@ -3193,7 +3193,8 @@
         "ext-dom": "*",
         "ext-mbstring": "*",
         "ext-xml": "*",
-        "ext-xmlwriter": "*"
+        "ext-xmlwriter": "*",
+        "ext-json": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

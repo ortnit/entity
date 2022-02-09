@@ -43,7 +43,7 @@ abstract class Entity implements JsonSerializable
      * magic setter to set values to a field
      *
      * @param string $name
-     * @param mixed  $value
+     * @param mixed $value
      *
      * @throws EntityNotFoundException
      * @throws EntityFieldValidationException
