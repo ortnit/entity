@@ -14,7 +14,7 @@ class AbstractEntityStoreTest extends TestCase
     /**
      * @return AbstractEntityStore
      */
-    public function getInstance(): AbstractEntityStore
+    public function getInstanceEntityStore(): AbstractEntityStore
     {
         $mock = $this->getMockForAbstractClass(AbstractEntityStore::class);
         $this->assertInstanceOf(AbstractEntityStore::class, $mock);
@@ -22,29 +22,39 @@ class AbstractEntityStoreTest extends TestCase
         return $mock;
     }
 
+    public function getInstanceEntity(): Entity
+    {
+        $this->getMockForAbstractClass(Entity::class);
+        $mock = $this->getMockBuilder(Entity::class)
+            ->setMockClassName('TestEntity')
+            ->getMockForAbstractClass();
+        $this->assertInstanceOf(Entity::class, $mock);
+
+        return $mock;
+    }
+
     /**
-     * @throws \ReflectionException
      */
     public function testSetEntityName()
     {
-        $mock = $this->getInstance();
+        $mock = $this->getInstanceEntityStore();
 
-        //$mock->setEntityClassName($this->entityName);
+        $mock->setEntityClassName(Entity::class);
         $this->assertIsString($mock->getEntityClassName());
         $this->assertEquals(Entity::class, $mock->getEntityClassName());
     }
 
     /**
-     * @throws \ReflectionException
      */
     public function testIsEntity()
     {
-        $mock = $this->getInstance();
-        $entity = new ServiceEntity();
+        $mock = $this->getInstanceEntityStore();
+        $entity = new class extends Entity {
+        };
 
         $this->assertTrue($mock->isEntity($entity));
 
-        $mock->setEntityClassName(ServiceEntity::class);
+        $mock->setEntityClassName(get_class($entity));
         $this->assertTrue($mock->isEntity($entity));
 
         $baseEntity = $this->getMockForAbstractClass(Entity::class);
@@ -52,16 +62,16 @@ class AbstractEntityStoreTest extends TestCase
     }
 
     /**
-     * @throws \ReflectionException
      * @throws EntityArgumentException
      */
     public function testAssert()
     {
-        $mock = $this->getInstance();
+        $mock = $this->getInstanceEntityStore();
         $baseEntity = $this->getMockForAbstractClass(Entity::class);
-        $entity = new ServiceEntity();
+        $entity = new class extends Entity {
+        };
 
-        $mock->setEntityClassName(ServiceEntity::class);
+        $mock->setEntityClassName(get_class($entity));
         $mock->assertEntity($entity);
         $this->assertFalse($mock->isEntity($baseEntity));
 

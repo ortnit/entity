@@ -44,21 +44,23 @@ abstract class AbstractEntityStore implements EntityStoreInterface
     }
 
     /**
+     * tests if the entity is an instance of entityClassName
+     *
      * @param Entity $entity
      *
      * @return bool
      */
     public function isEntity(Entity $entity): bool
     {
+        /**
+         * if entityClassName is not set return true no further check
+         * is needed
+         */
         if (!isset($this->entityClassName)) {
             return true;
         }
 
-        if ($entity instanceof $this->entityClassName) {
-            return true;
-        }
-
-        return false;
+        return $entity instanceof $this->entityClassName;
     }
 
     /**

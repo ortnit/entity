@@ -7,6 +7,7 @@ namespace Test;
 use Ortnit\Entity\EntityField;
 use Ortnit\Entity\Exception\EntityFieldValidationException;
 use Ortnit\Validator\Rule\IntType;
+use Ortnit\Validator\ValidatorInterface;
 use PHPUnit\Framework\TestCase;
 
 class EntityFieldTest extends TestCase
@@ -43,5 +44,16 @@ class EntityFieldTest extends TestCase
         $value = 2.5;
         $this->expectException(EntityFieldValidationException::class);
         $field->setValue($value);
+    }
+
+    /**
+     * @return void
+     */
+    public function testGetRule()
+    {
+        $name = 'state';
+        $default = 0;
+        $field = new EntityField($name, $default, new IntType());
+        $this->assertInstanceOf(ValidatorInterface::class, $field->getRule());
     }
 }
