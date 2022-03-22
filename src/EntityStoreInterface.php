@@ -12,9 +12,8 @@ interface EntityStoreInterface
     public function store(Entity $entity): void;
 
     /**
-     * @param $key
-     *
+     * @param mixed ...$params
      * @return Entity
      */
-    public function load($key): Entity;
+    public function load(...$params): Entity;
 }

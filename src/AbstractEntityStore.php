@@ -21,11 +21,10 @@ abstract class AbstractEntityStore implements EntityStoreInterface
     abstract public function store(Entity $entity): void;
 
     /**
-     * @param $key
-     *
+     * @param mixed ...$params
      * @return Entity
      */
-    abstract public function load($key): Entity;
+    abstract public function load(...$params): Entity;
 
     /**
      * @param string $className
