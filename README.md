@@ -2,4 +2,6 @@
 
 # Readme
 
-blablub
+Simple entity lib, which provides an easy way to use entities.
+
+The EntityStore works like a factory providing Entities.
